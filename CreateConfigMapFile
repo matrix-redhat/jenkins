@@ -1,5 +1,12 @@
 node('') {
 stage 'setCurrentProject'
+ when {
+    // Only say hello if a "greeting" is requested
+    expression { params.REQUESTED_ACTION == 'greeting' }
+ }
+            steps {
+                echo "Hello, bitwiseman!"
+            }
 sh 'oc project ${PROJECT_NAME}'
 stage 'createConfigMap'
 sh 'oc create -f https://raw.githubusercontent.com/debianmaster/openshift-examples/master/configmaps-examples/configmap-ex.yml'
