@@ -1,0 +1,6 @@
+node('') {
+stage 'setCurrentProject'
+sh 'oc project ${PROJECT_NAME}'
+stage 'createConfigMap'
+sh 'oc create -f https://raw.githubusercontent.com/debianmaster/openshift-examples/master/configmaps-examples/configmap-ex.yml'
+}
