@@ -12,12 +12,20 @@ pipeline {
     stages {
         stage ('CreateConfigMap') {
             when {
-                // Only say hello if a "greeting" is requested
                 expression { params.REQUESTED_ACTION == 'CreateConfigMap' }
             }
             steps {
                 sh 'oc project ${PROJECT_NAME}'
                 sh 'oc create -f https://raw.githubusercontent.com/debianmaster/openshift-examples/master/configmaps-examples/configmap-ex.yml'
+            }
+        }
+        
+        stage ('Deploy') {
+            when {
+               expression { params.REQUESTED_ACTION == 'Deploy' }
+            }
+            steps {
+                openshiftDeploy(namespace: 'eran2', deploymentConfig: 'nodejs-ex')
             }
         }
     }
