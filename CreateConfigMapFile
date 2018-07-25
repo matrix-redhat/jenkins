@@ -16,13 +16,7 @@ pipeline {
                 expression { params.REQUESTED_ACTION == 'greeting' }
             }
             steps {
-            node('') {
-stage 'setCurrentProject'
-sh 'oc project ${PROJECT_NAME}'
-stage 'createConfigMap'
-sh 'oc create -f https://raw.githubusercontent.com/debianmaster/openshift-examples/master/configmaps-examples/configmap-ex.yml'
-}
-
+                sh 'oc project ${PROJECT_NAME}'
                 echo "Hello, bitwiseman!"
             }
         }
