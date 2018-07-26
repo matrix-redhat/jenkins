@@ -25,7 +25,7 @@ pipeline {
                expression { params.REQUESTED_ACTION == 'Deploy' }
             }
             steps {
-                openshiftDeploy(namespace: 'eran2', deploymentConfig: 'nodejs-ex')
+                openshiftDeploy(namespace: 'eran2', depCfg: 'nodejs-ex')
             }
         }
     }
