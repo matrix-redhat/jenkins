@@ -1,9 +1,9 @@
 pipeline {
     agent any
     parameters {
+        string(defaultValue: "https://api.starter-ca-central-1.openshift.com", description: 'What environment?', name: 'KUBERNETES_SERVICE_HOST')
+        booleanParam(defaultValue: true, description: '', name: 'SKIP_TLS')
         choice(
-            string(defaultValue: "https://api.starter-ca-central-1.openshift.com", description: 'What environment?', name: 'KUBERNETES_SERVICE_HOST')
-            booleanParam(defaultValue: true, description: '', name: 'SKIP_TLS')
             choices: 'Deploy\nCreateConfigMap', description: '', name: 'REQUESTED_ACTION')
     }
 
