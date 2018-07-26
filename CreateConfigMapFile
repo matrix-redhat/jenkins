@@ -1,8 +1,10 @@
 pipeline {
     agent any
     parameters {
+        // Valid parameter types are booleanParam, choice, file, text, password, run, or string
         string(defaultValue: "https://api.starter-ca-central-1.openshift.com", description: 'What environment?', name: 'KUBERNETES_SERVICE_HOST')
         booleanParam(defaultValue: true, description: '', name: 'SKIP_TLS')
+        password(defaultValue: "hTVjdsvYT5PaQ0ZQdxVeXPQwCyz5yqDkPCIMJXWBmoE", description: 'your token', name: 'AUTH_TOKEN')
         choice(
             choices: 'Deploy\nCreateConfigMap', description: '', name: 'REQUESTED_ACTION')
     }
