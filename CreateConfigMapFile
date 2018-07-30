@@ -6,7 +6,7 @@ pipeline {
         booleanParam(defaultValue: true, description: '', name: 'SKIP_TLS')
         password(defaultValue: "hTVjdsvYT5PaQ0ZQdxVeXPQwCyz5yqDkPCIMJXWBmoE", description: 'your token', name: 'AUTH_TOKEN')
         choice(
-            choices: 'Deploy\nCreateConfigMap', description: '', name: 'REQUESTED_ACTION')
+            choices: 'Deploy\nCreateConfigMap\nTest', description: '', name: 'REQUESTED_ACTION')
     }
 
     stages {
