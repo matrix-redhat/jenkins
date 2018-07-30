@@ -32,7 +32,7 @@ pipeline {
         stage ('Test') {
             steps {
                 def props = readProperties interpolate: true, file: 'https://raw.githubusercontent.com/matrix-redhat/jenkins/master/tal.properties'
-                assert props.PROJECT_NAME = 'tal2'
+                println(props.PROJECT_NAME);
             }
         }
     }
