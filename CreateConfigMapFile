@@ -28,9 +28,7 @@ pipeline {
                 sh 'curl https://raw.githubusercontent.com/matrix-redhat/jenkins/master/tal.properties'
             echo "${PROJECT_NAME}"
             echo "${DEPLOYMENT_NAME}"
-             //openshiftDeploy(namespace: 'eran2', depCfg: 'nodejs-ex')
-                def projectName = "${PROJECT_NAME}"
-                echo projectName
+             openshiftDeploy(namespace: 'eran2', depCfg: 'nodejs-ex')
                 //openshiftDeploy(namespace: 'params.PROJECT_NAME', depCfg: 'params.DEPLOYMENT_NAME')
             }
         }
