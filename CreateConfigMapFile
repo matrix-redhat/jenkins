@@ -1,4 +1,7 @@
 pipeline {
+    environment {
+        ENV_NAME = ""
+    }
     agent any
     parameters {
         // Valid parameter types are booleanParam, choice, file, text, password, run, or string
@@ -30,7 +33,8 @@ pipeline {
             echo "project name is ${PROJECT_NAME}"
             echo "deployment name is ${DEPLOYMENT_NAME}"
              //openshiftDeploy(namespace: 'eran2', depCfg: 'nodejs-ex')
-             String projectName = ${PROJECT_NAME}
+             ENV_NAME = ${PROJECT_NAME}
+             echo 'Building Environment: ' + ENV_NAME
                 openshiftDeploy(namespace: '"${PROJECT_NAME}"', depCfg: '"${DEPLOYMENT_NAME}"')
             }
         }
