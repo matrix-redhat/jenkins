@@ -36,7 +36,7 @@ pipeline {
             }
             steps {
             echo "${PROJECT_NAME}"
-                wget https://raw.githubusercontent.com/matrix-redhat/jenkins/master/tal.properties
+                wget 'https://raw.githubusercontent.com/matrix-redhat/jenkins/master/tal.properties'
                 //def props = readProperties interpolate: true, file: 'https://raw.githubusercontent.com/matrix-redhat/jenkins/master/tal.properties'
                 //println(props.PROJECT_NAME);
             }
