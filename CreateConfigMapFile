@@ -29,7 +29,11 @@ pipeline {
             }
         }
         
-        stage ('Test') {
+   
+   stage ('Test') {
+            when {
+               expression { params.REQUESTED_ACTION == 'Test' }
+            }
             steps {
                 wget https://raw.githubusercontent.com/matrix-redhat/jenkins/master/tal.properties
                 //def props = readProperties interpolate: true, file: 'https://raw.githubusercontent.com/matrix-redhat/jenkins/master/tal.properties'
