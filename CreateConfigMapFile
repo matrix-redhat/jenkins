@@ -34,8 +34,8 @@ pipeline {
             echo "deployment name is ${DEPLOYMENT_NAME}"
              //openshiftDeploy(namespace: 'eran2', depCfg: 'nodejs-ex')
              //ENV_NAME = ${PROJECT_NAME}
-             sh 'echo "Building Environment: " + ${PROJECT_NAME}'
-             openshiftDeploy(namespace: '"${PROJECT_NAME}"', depCfg: '"${DEPLOYMENT_NAME}"')
+             //sh 'echo "Building Environment: " + ${PROJECT_NAME}'
+             openshiftDeploy(namespace: '''' + "${PROJECT_NAME}", depCfg: '"${DEPLOYMENT_NAME}"')
             }
         }
         
