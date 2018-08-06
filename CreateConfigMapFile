@@ -25,7 +25,7 @@ pipeline {
                expression { params.REQUESTED_ACTION == 'Deploy' }
             }
             steps {
-                openshiftDeploy(namespace: '${PROJECT_NAME}', depCfg: '${DEPLOYMENT_NAME}')
+                openshiftDeploy(namespace: ${PROJECT_NAME}, depCfg: ${DEPLOYMENT_NAME})
             }
         }
         
