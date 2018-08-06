@@ -29,7 +29,9 @@ pipeline {
             echo "${PROJECT_NAME}"
             echo "${DEPLOYMENT_NAME}"
              //openshiftDeploy(namespace: 'eran2', depCfg: 'nodejs-ex')
-                openshiftDeploy(namespace: 'params.PROJECT_NAME', depCfg: 'params.DEPLOYMENT_NAME')
+                def projectName = "${PROJECT_NAME}"
+                echo projectName
+                //openshiftDeploy(namespace: 'params.PROJECT_NAME', depCfg: 'params.DEPLOYMENT_NAME')
             }
         }
         
