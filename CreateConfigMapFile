@@ -28,7 +28,7 @@ pipeline {
                expression { params.REQUESTED_ACTION == 'Deploy' }
             }
             steps {
-             //   sh 'curl https://raw.githubusercontent.com/matrix-redhat/jenkins/master/tal.properties'
+                sh 'curl https://raw.githubusercontent.com/matrix-redhat/jenkins/master/tal.properties'
                 load "${WORKSPACE}\\tal.properties"
             //echo "project name is ${PROJECT_NAME}"
             //echo "deployment name is ${DEPLOYMENT_NAME}"
