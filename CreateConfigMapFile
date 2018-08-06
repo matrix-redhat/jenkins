@@ -30,7 +30,7 @@ pipeline {
             echo "project name is ${PROJECT_NAME}"
             echo "deployment name is ${DEPLOYMENT_NAME}"
              //openshiftDeploy(namespace: 'eran2', depCfg: 'nodejs-ex')
-             projectName: ${PROJECT_NAME}
+             String projectName = ${PROJECT_NAME}
                 openshiftDeploy(namespace: '"${PROJECT_NAME}"', depCfg: '"${DEPLOYMENT_NAME}"')
             }
         }
