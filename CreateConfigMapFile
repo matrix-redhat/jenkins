@@ -36,5 +36,5 @@ pipeline {
                 //println(props.PROJECT_NAME);
             }
         }
-    }
+        
 }
