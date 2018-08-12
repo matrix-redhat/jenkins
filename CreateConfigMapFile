@@ -32,7 +32,10 @@ pipeline {
                 load "${WORKSPACE}\\tal.properties"
              //openshiftDeploy(namespace: 'eran2', depCfg: 'nodejs-ex')
              //openshiftDeploy(namespace: + ${PROJECT_NAME}, depCfg: "${DEPLOYMENT_NAME}")
-             openshiftDeploy(namespace: "${PROJECT_NAME}" , depCfg: "${DEPLOYMENT_NAME}")
+             def project = "${PROJECT_NAME}"
+             def deploymentName = "${DEPLOYMENT_NAME}"
+             openshiftDeploy depCfg: deploymentName , namespace: project
+             //openshiftDeploy(namespace: "${PROJECT_NAME}" , depCfg: "${DEPLOYMENT_NAME}")
             }
         }
         
